@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Nearby Doctors</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body class='doc-body'> 
+    <script>
+        var results = <%-JSON.stringify(results)%>
+        console.log(results);
+    </script>
+    <div class="container-fluid" >
+	    <br>
+        <div class="row row-content align-items-center con4" style="background-color:#fde9e8">
+            <div class="col-sm-12 col-md-6 order-sm-last d-none d-lg-block">
+                <img class='front-images'  class='img1' src='/images/track3.jpg'>
+            </div>
+            <div class="col-sm-12 col-md-6 order-sm-first" >
+                <h1 class='headings'>Find Nearby Hospitals</h1>
+                <h3 class='content'>
+                    <% for(var i=0; i < results.length; i++) { %>
+                        <ul class="content" >
+                            <li ><%= results[i].title %></td>
+                            <br />
+                        </ul>
+                    <% } %>
+                </h3> 
+            </div>
+        </div>  
+    </div>  
+    <img style="overflow:hidden" src='/images/screenshot.jpg'>
+</body>
+</html>
